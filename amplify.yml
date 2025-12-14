@@ -1,0 +1,17 @@
+version: 1
+fronted:
+  phases:
+    preBuild:
+      commands:
+        - cd fronted
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: fronted/build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - fronted/node_modules/**/*
