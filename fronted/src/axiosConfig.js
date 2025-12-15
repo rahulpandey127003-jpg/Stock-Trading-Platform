@@ -1,5 +1,8 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://13.62.228.101";
-axios.defaults.withCredentials = true;
-export default axios;
+const instance = axios.create({
+  baseURL: "https://stocktrade-demo.xyz",
+  withCredentials: true,
+});
+
+export default instance;
