@@ -17,7 +17,10 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-// ===== CORS (CRITICAL FIX) =====
+/* =========================
+   CORS CONFIG (FINAL & CORRECT)
+========================= */
+
 const allowedOrigins = [
   "http://localhost:3000",
   "https://main.d3tgxf6k1vjj0g.amplifyapp.com",
@@ -25,37 +28,55 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: function (origin, callback) {
+    origin: (origin, callback) => {
+      // allow requests without origin (Postman, curl)
       if (!origin) return callback(null, true);
+
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
-      return callback(new Error("CORS not allowed"), false);
+
+      return callback(null, false);
     },
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// 🔴 REQUIRED FOR PREFLIGHT (OPTIONS)
+app.options("*", cors());
+
+/* =========================
+   MIDDLEWARE
+========================= */
 
 app.use(express.json());
 app.use(cookieParser());
 
-// ===== ROUTES =====
+/* =========================
+   ROUTES
+========================= */
+
 app.use("/auth", authRoute);
 
+// Protected route test
 app.get("/home", userVerification, (req, res) => {
-  res.json({
+  res.status(200).json({
     success: true,
     user: req.user.username,
   });
 });
 
+// Data routes
 app.get("/allHoldings", async (req, res) => {
-  res.json(await HoldingsModel.find({}));
+  const data = await HoldingsModel.find({});
+  res.json(data);
 });
 
 app.get("/allPositions", async (req, res) => {
-  res.json(await PositionsModel.find({}));
+  const data = await PositionsModel.find({});
+  res.json(data);
 });
 
 app.post("/newOrder", async (req, res) => {
@@ -63,13 +84,18 @@ app.post("/newOrder", async (req, res) => {
   res.status(201).json({ message: "Order saved!" });
 });
 
-// ===== SERVER =====
+/* =========================
+   SERVER + DB
+========================= */
+
 mongoose
   .connect(uri)
   .then(() => {
-    console.log("DB connected");
+    console.log("✅ MongoDB connected");
     app.listen(PORT, () =>
-      console.log(`Server running on port ${PORT}`)
+      console.log(`🚀 Server running on port ${PORT}`)
     );
   })
-  .catch(console.error);
+  .catch((err) => {
+    console.error("❌ DB connection error:", err);
+  });

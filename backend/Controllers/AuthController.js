@@ -2,7 +2,9 @@ const User = require("../model/UsersModel");
 const bcrypt = require("bcryptjs");
 const { createSecretToken } = require("../util/SecretToken");
 
-// ================= SIGNUP =================
+/* =======================
+   SIGNUP
+======================= */
 const Signup = async (req, res) => {
   try {
     const { email, username, password } = req.body;
@@ -25,16 +27,17 @@ const Signup = async (req, res) => {
     const user = await User.create({
       email,
       username,
-      password, // hashed by model
+      password, // hashed in model
     });
 
     const token = createSecretToken(user._id);
-    const isProduction = process.env.NODE_ENV === "production";
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: isProduction,
-      sameSite: isProduction ? "none" : "lax",
+      secure: true,        // ✅ REQUIRED for Amplify HTTPS
+      sameSite: "none",    // ✅ REQUIRED for cross-site cookies
+      path: "/",           // ✅ REQUIRED
+      maxAge: 24 * 60 * 60 * 1000, // ✅ 1 day
     });
 
     return res.status(201).json({
@@ -50,10 +53,19 @@ const Signup = async (req, res) => {
   }
 };
 
-// ================= LOGIN =================
+/* =======================
+   LOGIN
+======================= */
 const Login = async (req, res) => {
   try {
     const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Email and password required",
+      });
+    }
 
     const user = await User.findOne({ email });
     if (!user) {
@@ -72,12 +84,13 @@ const Login = async (req, res) => {
     }
 
     const token = createSecretToken(user._id);
-    const isProduction = process.env.NODE_ENV === "production";
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: isProduction,
-      sameSite: isProduction ? "none" : "lax",
+      secure: true,        // ✅ REQUIRED
+      sameSite: "none",    // ✅ REQUIRED
+      path: "/",           // ✅ REQUIRED
+      maxAge: 24 * 60 * 60 * 1000,
     });
 
     return res.status(200).json({
