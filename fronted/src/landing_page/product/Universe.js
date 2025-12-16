@@ -11,27 +11,27 @@ function Universe() {
           partner platforms
         </p>
         <div className="col-4 p-3">
-          <img src="media/smallcaseLogo.png"></img>
+          <img src="/media/smallcaseLogo.png"></img>
           <p className="text-small text-muted">Thematic investment plan</p>
         </div>
         <div className="col-4 p-3">
-          <img src="media/zerodhaFundhouse.png" style={{ width: "30%" }}></img>
+          <img src="/media/zerodhaFundhouse.png" style={{ width: "30%" }}></img>
           <p className="text-small text-muted">Thematic investment plan</p>
         </div>
         <div className="col-4 p-3">
-          <img src="media/sensibullLogo.svg"></img>
+          <img src="/media/sensibullLogo.svg"></img>
           <p className="text-small text-muted">Thematic investment plan</p>
         </div>
         <div className="col-4 p-3">
-          <img src="media/streakLogo.png" style={{ width: "30%" }}></img>
+          <img src="/media/streakLogo.png" style={{ width: "30%" }}></img>
           <p className="text-small text-muted">Thematic investment plan</p>
         </div>
         <div className="col-4 p-3">
-          <img src="media/dittoLogo.png" style={{ width: "30%" }}></img>
+          <img src="/media/dittoLogo.png" style={{ width: "30%" }}></img>
           <p className="text-small text-muted">Thematic investment plan</p>
         </div>
         <div className="col-4 p-3">
-          <img src="media/smallcaseLogo.png"></img>
+          <img src="/media/smallcaseLogo.png"></img>
           <p className="text-small text-muted">Thematic investment plan</p>
         </div>
         <Link to="/signup" style={{ width: "100%", textAlign: "center" }}>

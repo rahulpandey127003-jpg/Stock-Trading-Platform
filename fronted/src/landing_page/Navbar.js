@@ -9,7 +9,7 @@ function Navbar() {
     >
       <div class="container p-2">
         <Link class="navbar-brand" to="/">
-          <img src="media/logo.svg" style={{ width: "25%" }} alt="#" />
+          <img src="/media/logo.svg" style={{ width: "25%" }} alt="#" />
         </Link>
         <button
           class="navbar-toggler"
