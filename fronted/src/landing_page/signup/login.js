@@ -20,9 +20,8 @@ function Login() {
 
       if (res.data.success) {
         setTimeout(() => {
-          // ✅ redirect safely
           navigate("/dashboard");
-        }, 800);
+        }, 500);
       }
     } catch (error) {
       setMsg("Invalid email or password");
@@ -50,7 +49,7 @@ function Login() {
           textAlign: "center",
         }}
       >
-        {/* ✅ LOGO IMAGE */}
+        {/* LOGO */}
         <img
           src={`${process.env.PUBLIC_URL}/media/logo.svg`}
           alt="Zerodha"
@@ -91,14 +90,7 @@ function Login() {
           Login
         </button>
 
-        <p
-          style={{
-            marginTop: "10px",
-            color: msg.toLowerCase().includes("success") ? "green" : "red",
-          }}
-        >
-          {msg}
-        </p>
+        <p style={{ marginTop: "10px", color: "red" }}>{msg}</p>
 
         <p style={{ marginTop: "10px" }}>
           Don’t have an account?{" "}
@@ -120,4 +112,3 @@ const inputStyle = {
 };
 
 export default Login;
-gi
