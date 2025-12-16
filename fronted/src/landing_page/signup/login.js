@@ -1,14 +1,16 @@
 import { useState } from "react";
 import axios from "../../axiosConfig";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
+      // 1️⃣ Login request
       const res = await axios.post("/auth/login", {
         email,
         password,
@@ -16,11 +18,15 @@ function Login() {
 
       setMsg(res.data.message);
 
-      // Redirect to home after login success
+      // 2️⃣ Verify login from backend (IMPORTANT)
       if (res.data.success) {
-        setTimeout(() => {
-          window.location.href = "/home";
-        }, 800);
+        const verify = await axios.get("/home");
+
+        if (verify.data.success) {
+          navigate("/home"); // ✅ React navigation (NO reload)
+        } else {
+          setMsg("Session verification failed");
+        }
       }
     } catch (error) {
       setMsg("Invalid email or password");
@@ -85,7 +91,7 @@ function Login() {
         <p
           style={{
             marginTop: "10px",
-            color: msg.includes("success") ? "green" : "red",
+            color: msg.toLowerCase().includes("success") ? "green" : "red",
           }}
         >
           {msg}
