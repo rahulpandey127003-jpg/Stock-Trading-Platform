@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const instance = axios.create({
-  baseURL: "https://stocktrade-demo.xyz",
+const axiosInstance = axios.create({
+  baseURL: "https://stocktrade-demo.xyz", // backend
   withCredentials: true,
 });
 
-export default instance;
+export default axiosInstance;
