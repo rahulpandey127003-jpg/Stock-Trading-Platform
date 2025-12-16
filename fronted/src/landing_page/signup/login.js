@@ -1,11 +1,13 @@
 import { useState } from "react";
 import axios from "../../axiosConfig";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
+
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -16,10 +18,10 @@ function Login() {
 
       setMsg(res.data.message);
 
-      // Redirect to home after login success
       if (res.data.success) {
         setTimeout(() => {
-          window.location.href = "https://main.djvtf0p0j2x4v.amplifyapp.com";
+          // ✅ redirect safely
+          navigate("/dashboard");
         }, 800);
       }
     } catch (error) {
@@ -48,6 +50,13 @@ function Login() {
           textAlign: "center",
         }}
       >
+        {/* ✅ LOGO IMAGE */}
+        <img
+          src={`${process.env.PUBLIC_URL}/media/logo.svg`}
+          alt="Zerodha"
+          style={{ width: "120px", marginBottom: "20px" }}
+        />
+
         <h2 style={{ marginBottom: "20px", color: "#06b6d4" }}>
           Login Account
         </h2>
@@ -85,7 +94,7 @@ function Login() {
         <p
           style={{
             marginTop: "10px",
-            color: msg.includes("success") ? "green" : "red",
+            color: msg.toLowerCase().includes("success") ? "green" : "red",
           }}
         >
           {msg}
@@ -111,3 +120,4 @@ const inputStyle = {
 };
 
 export default Login;
+gi
