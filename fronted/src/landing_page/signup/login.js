@@ -19,7 +19,7 @@ function Login() {
       // Redirect to home after login success
       if (res.data.success) {
         setTimeout(() => {
-          window.location.href = "/";
+          window.location.href = "/home";
         }, 800);
       }
     } catch (error) {
@@ -82,7 +82,12 @@ function Login() {
           Login
         </button>
 
-        <p style={{ marginTop: "10px", color: msg.includes("success") ? "green" : "red" }}>
+        <p
+          style={{
+            marginTop: "10px",
+            color: msg.includes("success") ? "green" : "red",
+          }}
+        >
           {msg}
         </p>
 

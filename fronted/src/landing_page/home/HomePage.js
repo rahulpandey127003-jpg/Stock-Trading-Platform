@@ -3,19 +3,31 @@ import axios from "../../axiosConfig";
 
 function HomePage() {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("/home").then((res) => {
-      console.log(res.data);
-      if (res.data.status) {
-        setUser(res.data.user);
-      } else {
-        window.location.href = "/login"; // redirect if not logged in
+    const verifyUser = async () => {
+      try {
+        const res = await axios.get("/home");
+        console.log("HOME API:", res.data);
+
+        if (res.data.status) {
+          setUser(res.data.user);
+        } else {
+          window.location.href = "/login";
+        }
+      } catch (error) {
+        console.error("AUTH ERROR:", error);
+        window.location.href = "/login";
+      } finally {
+        setLoading(false);
       }
-    });
+    };
+
+    verifyUser();
   }, []);
 
-  if (!user) return <h2>Loading...</h2>;
+  if (loading) return <h2>Loading...</h2>;
 
   return (
     <div style={{ padding: 20 }}>
