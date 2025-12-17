@@ -1,5 +1,4 @@
 import React from "react";
-import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function LeftSection({
   imageURL,
@@ -48,7 +47,7 @@ function LeftSection({
               rel="noreferrer"
             >
               <img
-                src={`${MEDIA_URL}/googlePlayBadge.svg`}
+                src="/googlePlayBadge.svg"
                 alt="Get it on Google Play"
               />
             </a>
@@ -60,7 +59,7 @@ function LeftSection({
               className="ms-4"
             >
               <img
-                src={`${MEDIA_URL}/appstoreBadge.svg`}
+                src="media/appstoreBadge.svg"
                 alt="Download on the App Store"
               />
             </a>

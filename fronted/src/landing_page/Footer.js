@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Footer() {
   return (
@@ -9,7 +8,7 @@ function Footer() {
         <div className="row mt-5 mb-5">
           <div className="col">
             <img
-              src={`${MEDIA_URL}/logo.svg`}
+              src="media/logo.svg"
               alt="Zerodha Logo"
               style={{ width: "70%" }}
             />

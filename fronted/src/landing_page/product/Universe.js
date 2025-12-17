@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Universe() {
   return (
@@ -13,13 +12,13 @@ function Universe() {
         </p>
 
         <div className="col-4 p-3">
-          <img src={`${MEDIA_URL}/smallcaseLogo.png`} alt="Smallcase" />
+          <img src="media/smallcaseLogo.png" alt="Smallcase" />
           <p className="text-small text-muted">Thematic investment plans</p>
         </div>
 
         <div className="col-4 p-3">
           <img
-            src={`${MEDIA_URL}/zerodhaFundhouse.png`}
+            src="media/zerodhaFundhouse.png"
             alt="Zerodha Fund House"
             style={{ width: "30%" }}
           />
@@ -27,13 +26,13 @@ function Universe() {
         </div>
 
         <div className="col-4 p-3">
-          <img src={`${MEDIA_URL}/sensibullLogo.svg`} alt="Sensibull" />
+          <img src="media/sensibullLogo.svg" alt="Sensibull" />
           <p className="text-small text-muted">Options trading platform</p>
         </div>
 
         <div className="col-4 p-3">
           <img
-            src={`${MEDIA_URL}/streakLogo.png`}
+            src="media/streakLogo.png"
             alt="Streak"
             style={{ width: "30%" }}
           />
@@ -42,7 +41,7 @@ function Universe() {
 
         <div className="col-4 p-3">
           <img
-            src={`${MEDIA_URL}/dittoLogo.png`}
+            src="media/dittoLogo.png"
             alt="Ditto"
             style={{ width: "30%" }}
           />
@@ -50,7 +49,7 @@ function Universe() {
         </div>
 
         <div className="col-4 p-3">
-          <img src={`${MEDIA_URL}/smallcaseLogo.png`} alt="Smallcase" />
+          <img src="media/smallcaseLogo.png" alt="Smallcase" />
           <p className="text-small text-muted">Thematic portfolios</p>
         </div>
 

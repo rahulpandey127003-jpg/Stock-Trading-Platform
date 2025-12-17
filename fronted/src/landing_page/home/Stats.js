@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Stats() {
   return (
@@ -39,7 +38,7 @@ function Stats() {
 
         <div className="col-6">
           <img
-            src={`${MEDIA_URL}/ecosystem.png`}
+            src="media/ecosystem.png"
             alt="Zerodha ecosystem"
             style={{ width: "95%" }}
           />

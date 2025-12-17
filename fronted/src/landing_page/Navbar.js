@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Navbar() {
   return (
@@ -11,7 +10,7 @@ function Navbar() {
       <div className="container p-2">
         <Link className="navbar-brand" to="/">
           <img
-            src={`${MEDIA_URL}/logo.svg`}
+            src="media/logo.svg"
             style={{ width: "25%" }}
             alt="Zerodha Logo"
           />

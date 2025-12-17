@@ -1,5 +1,4 @@
 import React from "react";
-import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Awards() {
   return (
@@ -7,7 +6,7 @@ function Awards() {
       <div className="row">
         <div className="col-6 p-5">
           <img
-            src={`${MEDIA_URL}/largestBroker.svg`}
+            src="media/largestBroker.svg"
             alt="Largest stock broker in India"
           />
         </div>

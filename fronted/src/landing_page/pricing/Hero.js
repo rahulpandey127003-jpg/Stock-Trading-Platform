@@ -1,5 +1,4 @@
 import React from "react";
-import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Hero() {
   return (
@@ -9,7 +8,7 @@ function Hero() {
         <h3 className="text-muted p-3">List of all charges and taxes</h3>
 
         <div className="col-4 p-3">
-          <img src={`${MEDIA_URL}/pricing0.svg`} alt="Pricing" />
+          <img src="media/pricing0.svg" alt="Pricing" />
           <h1 className="fs-4">Free equity delivery</h1>
           <p>
             All equity delivery investments (NSE, BSE), are absolutely free — ₹
@@ -18,7 +17,7 @@ function Hero() {
         </div>
 
         <div className="col-4 p-3">
-          <img src={`${MEDIA_URL}/intradayTrades.svg`} alt="Intraday" />
+          <img src="media/intradayTrades.svg" alt="Intraday" />
           <h1 className="fs-4">Intraday and F&O trades</h1>
           <p>
             Flat ₹ 20 or 0.03% (whichever is lower) per executed order on
@@ -28,7 +27,7 @@ function Hero() {
         </div>
 
         <div className="col-4 p-3">
-          <img src={`${MEDIA_URL}/pricing0.svg`} alt="MF" />
+          <img src="media/pricing0.svg" alt="MF" />
           <h1 className="fs-4">Free direct MF</h1>
           <p>
             All direct mutual fund investments are absolutely free — ₹ 0

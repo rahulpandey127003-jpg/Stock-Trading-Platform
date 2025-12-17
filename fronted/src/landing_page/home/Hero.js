@@ -7,7 +7,7 @@ function Hero() {
     <div className="container p-5 mb-5">
       <div className="row text-center">
         <img
-          src={`${MEDIA_URL}/homeHero.png`}
+          src="media/homeHero.png"
           alt="Investing platform hero"
           className="img-fluid"
         />

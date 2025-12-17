@@ -1,5 +1,4 @@
 import React from "react";
-import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Team() {
   return (
@@ -11,7 +10,7 @@ function Team() {
       <div className="row p-5">
         <div className="col-6 p-5 text-center">
           <img
-            src={`${MEDIA_URL}/profilepict.png`}
+            src={`media/profilepict.png`}
             alt="Nitin Pandey"
             style={{ width: "60%", borderRadius: "50%" }}
           />

@@ -51,7 +51,7 @@ function Login() {
       >
         {/* LOGO */}
         <img
-          src={`${process.env.PUBLIC_URL}/media/logo.svg`}
+          src="media/logo.svg"
           alt="Zerodha"
           style={{ width: "120px", marginBottom: "20px" }}
         />
