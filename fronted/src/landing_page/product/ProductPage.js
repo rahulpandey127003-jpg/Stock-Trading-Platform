@@ -3,53 +3,71 @@ import Hero from "./Hero";
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
 import Universe from "./Universe";
+import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function ProductPage() {
   return (
     <>
       <Hero />
+
       <LeftSection
-        imageURl="https://stocktrade-demo.xyz/media/coin.png"
+        imageURL={`${MEDIA_URL}/coin.png`}
         productName="Coin"
         productDescription="Buy direct mutual funds online, commission-free, delivered directly to your Demat account. Enjoy the investment experience on your Android and iOS devices."
-        tryDemo=""
-        learnmore=""
-        googlePlay=""
-        apppStore=""
+        tryDemo="/demo"
+        learnMore="/products/coin"
+        googlePlay="https://play.google.com"
+        appStore="https://apple.com"
       />
-      <RightSection 
-        imageURl="https://stocktrade-demo.xyz/media/console.png"
+
+      <RightSection
+        imageURL={`${MEDIA_URL}/console.png`}
         productName="Console"
         productDescription="The central dashboard for your Zerodha account. Gain insights into your trades and investments with in-depth reports and visualisations."
-        learnmore=""
+        learnMore="/products/console"
       />
+
       <LeftSection
-        imageURl="https://stocktrade-demo.xyz/media/kite.png"
+        imageURL={`${MEDIA_URL}/kite.png`}
         productName="Kite"
         productDescription="Our ultra-fast flagship trading platform with streaming market data, advanced charts, an elegant UI, and more. Enjoy the Kite experience seamlessly on your Android and iOS devices."
-        tryDemo=""
-        learnmore=""
-        googlePlay=""
-        apppStore=""
+        tryDemo="/demo"
+        learnMore="/products/kite"
+        googlePlay="https://play.google.com"
+        appStore="https://apple.com"
       />
+
       <RightSection
-        imageURl="https://stocktrade-demo.xyz/media/kiteconnect.png"
+        imageURL={`${MEDIA_URL}/kiteconnect.png`}
         productName="Kite Connect API"
         productDescription="Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase."
-        learnmore="" 
+        learnMore="/products/kite-connect"
       />
+
       <LeftSection
-        imageURl="https://stocktrade-demo.xyz/media/varsity.png"
+        imageURL={`${MEDIA_URL}/varsity.png`}
         productName="Varsity"
-        productDescription="An easy to grasp, collection of stock market lessons with in-depth coverage and illustrations. Content is broken down into bite-size cards to help you learn on the go."
-        tryDemo=""
-        learnmore=""
-        googlePlay=""
-        apppStore=""
+        productDescription="An easy-to-grasp collection of stock market lessons with in-depth coverage and illustrations. Content is broken down into bite-size cards to help you learn on the go."
+        tryDemo="https://zerodha.com/varsity/"
+        learnMore="https://zerodha.com/varsity/"
+        googlePlay="https://play.google.com"
+        appStore="https://apple.com"
       />
-      <div className="text-center">
-      <p>Want to know more about our technology stack? Check out the Zerodha.tech blog.</p>
+
+      <div className="text-center my-5">
+        <p>
+          Want to know more about our technology stack? Check out the{" "}
+          <a
+            href="https://zerodha.tech"
+            target="_blank"
+            rel="noreferrer"
+            className="text-decoration-none"
+          >
+            Zerodha.tech blog
+          </a>.
+        </p>
       </div>
+
       <Universe />
     </>
   );

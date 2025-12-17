@@ -1,34 +1,74 @@
 import React from "react";
+import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function LeftSection({
-  imageURl,
+  imageURL,
   productName,
   productDescription,
   tryDemo,
-  learnmore,
+  learnMore,
   googlePlay,
-  apppStore,
+  appStore,
 }) {
   return (
-  <div className="container mt-5">
-    <div className="row">
+    <div className="container mt-5">
+      <div className="row align-items-center">
         <div className="col-6">
-            <img src={imageURl}></img>
+          <img
+            src={imageURL}
+            alt={productName}
+            className="img-fluid"
+          />
         </div>
-        <div className="col-6 p-5 mt-5">
-            <h1>{productName}</h1>
-            <p>{productDescription}</p>
-            <div>
-            <a href={tryDemo} className="text-decoration-none">Try Demo</a>
-            <a href={learnmore} style={{marginLeft:"50px"}} className="text-decoration-none p-5">Learn More</a>
-            </div>
-            <div className="mt-3">
-            <a href={googlePlay}><img src="https://stocktrade-demo.xyz/media/googlePlayBadge.svg"/></a>
-            <a href={apppStore} className="p-5"><img src="https://stocktrade-demo.xyz/media/appstoreBadge.svg"/></a>
-            </div>
+
+        <div className="col-6 p-5">
+          <h1>{productName}</h1>
+          <p>{productDescription}</p>
+
+          <div className="mb-3">
+            <a
+              href={tryDemo}
+              className="text-decoration-none"
+            >
+              Try Demo
+            </a>
+
+            <a
+              href={learnMore}
+              className="text-decoration-none ms-5"
+            >
+              Learn More
+            </a>
+          </div>
+
+          <div className="mt-3">
+            <a
+              href={googlePlay}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={`${MEDIA_URL}/googlePlayBadge.svg`}
+                alt="Get it on Google Play"
+              />
+            </a>
+
+            <a
+              href={appStore}
+              target="_blank"
+              rel="noreferrer"
+              className="ms-4"
+            >
+              <img
+                src={`${MEDIA_URL}/appstoreBadge.svg`}
+                alt="Download on the App Store"
+              />
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
-)}
+  );
+}
 
 export default LeftSection;

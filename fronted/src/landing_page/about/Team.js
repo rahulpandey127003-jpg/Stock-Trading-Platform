@@ -1,4 +1,5 @@
 import React from "react";
+import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Team() {
   return (
@@ -10,9 +11,9 @@ function Team() {
       <div className="row p-5">
         <div className="col-6 p-5 text-center">
           <img
-            src="https://stocktrade-demo.xyz/media/profilepict.png"
-            alt="Profile"
-            style={{ width: "60%", borderRadius: "100%" }}
+            src={`${MEDIA_URL}/profilepict.png`}
+            alt="Nitin Pandey"
+            style={{ width: "60%", borderRadius: "50%" }}
           />
 
           <h4 className="mt-3">NITIN PANDEY</h4>
@@ -33,8 +34,18 @@ function Team() {
 
           <p>
             Connect on{" "}
-            <a href="#" style={{ textDecoration: "none" }}>Homepage</a> /{" "}
-            <a href="#" style={{ textDecoration: "none" }}>Twitter</a>
+            <a href="https://stocktrade-demo.xyz" style={{ textDecoration: "none" }}>
+              Homepage
+            </a>{" "}
+            /{" "}
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              Twitter
+            </a>
           </p>
         </div>
       </div>

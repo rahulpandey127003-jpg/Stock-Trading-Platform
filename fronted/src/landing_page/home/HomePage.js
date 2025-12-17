@@ -1,37 +1,38 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "../../axiosConfig";
 
 function HomePage() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const verifyUser = async () => {
       try {
         const res = await axios.get("/home");
-        console.log("HOME API:", res.data);
 
         if (res.data.status) {
           setUser(res.data.user);
         } else {
-          window.location.href = "/login";
+          navigate("/login");
         }
       } catch (error) {
         console.error("AUTH ERROR:", error);
-        window.location.href = "/login";
+        navigate("/login");
       } finally {
         setLoading(false);
       }
     };
 
     verifyUser();
-  }, []);
+  }, [navigate]);
 
   if (loading) return <h2>Loading...</h2>;
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>Welcome, {user} 👋</h1>
+      <h1>Welcome, {user?.username || user?.email} 👋</h1>
     </div>
   );
 }

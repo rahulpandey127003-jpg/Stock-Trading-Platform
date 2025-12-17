@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Pricing() {
   return (
@@ -6,21 +7,28 @@ function Pricing() {
       <div className="row">
         <div className="col-4">
           <h1 className="mb-5">Unbeatable pricing</h1>
+
           <p>
             We pioneered the concept of discount broking and price transparency
             in India. Flat fees and no hidden charges
           </p>
-          <a href="" style={{ textDecoration: "none" }}>
+
+          <Link to="/pricing" style={{ textDecoration: "none" }}>
             See pricing{" "}
-            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-          </a>
+            <i
+              className="fa fa-long-arrow-right"
+              aria-hidden="true"
+            ></i>
+          </Link>
         </div>
+
         <div className="col-2"></div>
+
         <div className="col-6">
           <div className="row text-center">
-            <div className="col border">
+            <div className="col border p-3">
               <h1 className="mb-3">
-                <i class="fa fa-inr" aria-hidden="true"></i>0
+                <i className="fa fa-inr" aria-hidden="true"></i> 0
               </h1>
               <p>
                 Free equity delivery and
@@ -28,11 +36,12 @@ function Pricing() {
                 direct mutual funds
               </p>
             </div>
-            <div className="col border">
+
+            <div className="col border p-3">
               <h1 className="mb-3">
-                <i class="fa fa-inr" aria-hidden="true"></i>20
+                <i className="fa fa-inr" aria-hidden="true"></i> 20
               </h1>
-              <p>Intraday and F&O</p>
+              <p>Intraday and F&amp;O</p>
             </div>
           </div>
         </div>

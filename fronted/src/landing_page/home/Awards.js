@@ -1,51 +1,48 @@
 import React from "react";
+import { MEDIA_URL } from "../config"; // adjust path if needed
 
 function Awards() {
   return (
     <div className="container mt-5">
       <div className="row">
         <div className="col-6 p-5">
-          <img src="https://stocktrade-demo.xyz/media/largestBroker.svg" alt="#"></img>
+          <img
+            src={`${MEDIA_URL}/largestBroker.svg`}
+            alt="Largest stock broker in India"
+          />
         </div>
+
         <div className="col-6 p-5 mt-5">
           <h1>Largest stock broker in India</h1>
+
           <p className="mb-5">
             2+ million Zerodha clients contribute to our 15% of all retail order
             volumes in India daily by trading and investing in:
           </p>
+
           <div className="row">
             <div className="col-6">
               <ul>
-                <li>
-                  <p>Futures and Options</p>
-                </li>
-                <li>
-                  <p>Commodity derivatives</p>
-                </li>
-                <li>
-                  <p>currency derivatives</p>
-                </li>
+                <li>Futures and Options</li>
+                <li>Commodity derivatives</li>
+                <li>Currency derivatives</li>
               </ul>
             </div>
+
             <div className="col-6">
               <ul>
-                <li>
-                  <p>Stocks & IPOs</p>
-                </li>
-                <li>
-                  <p>Direct mutual funds</p>
-                </li>
-                <li>
-                  <p>Bonds and Growth</p>
-                </li>
+                <li>Stocks & IPOs</li>
+                <li>Direct mutual funds</li>
+                <li>Bonds and Growth</li>
               </ul>
             </div>
           </div>
+
           <img
-            src="https://stocktrade-demo.xyz/media/pressLogos.png"
-            alt="#"
+            src={`${MEDIA_URL}/pressLogos.png`}
+            alt="Press logos"
             style={{ width: "90%" }}
-          ></img>
+          />
         </div>
       </div>
     </div>
