@@ -24,7 +24,9 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:3000",
   "https://main.d3tgxf6k1vjj0g.amplifyapp.com",
+  "https://stocktrade-demo.xyz"
 ];
+
 
 app.use(
   cors({
