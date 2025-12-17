@@ -23,8 +23,8 @@ function LeftSection({
             <a href={learnmore} style={{marginLeft:"50px"}} className="text-decoration-none p-5">Learn More</a>
             </div>
             <div className="mt-3">
-            <a href={googlePlay}><img src="media/googlePlayBadge.svg"/></a>
-            <a href={apppStore} className="p-5"><img src="media/appstoreBadge.svg"/></a>
+            <a href={googlePlay}><img src="https://stocktrade-demo.xyz/media/googlePlayBadge.svg"/></a>
+            <a href={apppStore} className="p-5"><img src="https://stocktrade-demo.xyz/media/appstoreBadge.svg"/></a>
             </div>
         </div>
     </div>

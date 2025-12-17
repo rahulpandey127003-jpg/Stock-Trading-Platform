@@ -16,7 +16,7 @@ function Stats() {
                 <p className='text-muted'>With initiatives like Nudge and Kill Switch, we don't just facilitate transactions, but actively help you do better with your money.</p>
                </div>
                 <div className='col-6'>
-                <img src='media/ecosystem.png' alt='#' style={{width:"95%"}}></img>
+                <img src='https://stocktrade-demo.xyz/media/ecosystem.png' alt='#' style={{width:"95%"}}></img>
                 <div className='text-center'>
                     <a href='' className='mx-5' style={{textDecoration:"none"}}>Explore our product <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                     <a href='' style={{textDecoration:"none"}}>Try Kite Demo <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>

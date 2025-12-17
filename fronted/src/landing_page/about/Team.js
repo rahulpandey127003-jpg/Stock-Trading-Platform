@@ -10,7 +10,7 @@ function Team() {
       <div className="row p-5">
         <div className="col-6 p-5 text-center">
           <img
-            src={`${process.env.PUBLIC_URL}/media/profilepict.png`}
+            src="https://stocktrade-demo.xyz/media/profilepict.png"
             alt="Profile"
             style={{ width: "60%", borderRadius: "100%" }}
           />
